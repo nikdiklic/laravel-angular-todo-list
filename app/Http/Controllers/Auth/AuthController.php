@@ -51,7 +51,7 @@ class AuthController extends Controller
             'first_name' => 'required|max:255',
             'last_name' => 'required|max:255',
             'company' => 'required|max:255',
-            'country' => 'required|max:255',
+            'country_id' => 'required|max:255',
         ]);
     }
 
@@ -69,7 +69,7 @@ class AuthController extends Controller
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
             'company' => $data['company'],
-            'country' => $data['country'],
+            'country_id' => $data['country_id'],
             
         ]);
     }

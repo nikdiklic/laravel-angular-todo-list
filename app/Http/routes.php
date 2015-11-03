@@ -16,6 +16,7 @@
         Route::get('/', ['as' => 'home', function(){
             return view('home');
         }]);
+        Route::resource('todo','TodoController');
     });
 
     Route::group(['middleware' => 'guest'], function () {
@@ -26,5 +27,4 @@
         Route::post('register', ['as' => 'register', 'uses' => 'Auth\AuthController@postRegister']);
     });
     
-
 

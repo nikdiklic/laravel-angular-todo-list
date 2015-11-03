@@ -19,7 +19,7 @@ class UsersSeeder extends Seeder
     	    	"first_name"=>"adminko",
     	    	"last_name"=>"adminovic",
     	    	"company"=>"vivify",
-    	    	"country"=> 1
+    	    	"country_id"=> 1
 			],
 			[
     	    	"email"=>"nikola@laravel-test.dev",
@@ -27,7 +27,7 @@ class UsersSeeder extends Seeder
     	    	"first_name"=>"nikola",
     	    	"last_name"=>"diklic",
     	    	"company"=>"vivify",
-    	    	"country"=> 2
+    	    	"country_id"=> 2
 			],
 			[
     	    	"email"=>"random@laravel-test.dev",
@@ -35,7 +35,7 @@ class UsersSeeder extends Seeder
     	    	"first_name"=>"randomir",
     	    	"last_name"=>"randomanovic",
     	    	"company"=>"vivify",
-    	    	"country"=> 3
+    	    	"country_id"=> 3
 			],
     	];
 

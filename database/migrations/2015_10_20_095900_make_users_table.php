@@ -20,8 +20,8 @@ class MakeUsersTable extends Migration
             $table->string('last_name');
             $table->string('company');
             $table->string('remember_token');
-            $table->integer('country')->unsigned();
-            $table->foreign('country')->references('id')->on('countries');
+            $table->integer('country_id')->unsigned();
+            $table->foreign('country_id')->references('id')->on('countries');
             $table->timestamps();
         });
     }

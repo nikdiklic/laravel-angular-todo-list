@@ -33,7 +33,8 @@
 
     <div class="form-group">
         
-        <select name="country" class="form-control" >
+        <select name="country_id" class="form-control" >
+            <option value="" disabled selected>Country</option>
             @foreach($countries as $key => $countryName)
                 <option value="{{$key}}">{{$countryName}}</option>            
             @endforeach

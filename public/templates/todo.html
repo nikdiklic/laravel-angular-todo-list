@@ -1,0 +1,69 @@
+
+
+<div ng-controller="MainController">
+  
+
+  <div class="row list-group-item">
+    <div class="col-md-1" >
+      <span class="glyphicon glyphicon-check"></span>
+    </div>
+    <div class="col-md-7" >
+      <input class="form-control" ng-required type="text" placeholder="New Task" ng-model="newTodoItem.name" required>
+    </div>
+    
+    <div class="col-md-2 " >
+      
+      <select class="form-control " ng-options="value for value in values" name="priority" ng-model="newTodoItem.priority">
+      </select>
+    </div>
+    
+    <div class="col-md-2 " >
+      <span class="btn btn-large btn-success" ng-click="addTodoItem()" >Add task</span>
+    </div>
+  </div>
+
+
+
+
+  <div ng-repeat="item in todoItems track by $index" class="row list-group-item">
+    
+    <div ng-if="!item.edited">
+      <div class="col-md-1">
+      <input class="normal" type="checkbox" ng-model="item.done" ng-true-value="true" ng-false-value="false" ng-click="check(item)">
+      </div>
+      <div class="col-md-7">
+        <span  class="normal" ng-class="{ 'done' : item.done==true }" ng-bind="item.name" >
+        </span>
+      </div>
+    
+      <div class="col-md-2">
+        <span ng-bind="item.priority"></span>
+      </div>
+
+      <div class="col-md-2">
+        <a href="" ng-click="toggleEditMode(item)" class="btn btn-sm btn-primary" ng-click="" ><span class="glyphicon glyphicon-pencil"></span></a>
+        <a href="" ng-click="deleteTodo(item, $index)" class="btn btn-sm btn-danger" ng-click="" ><span class="glyphicon glyphicon-trash"></span></a>
+      </div>
+    </div>
+
+    
+    <div ng-if="item.edited">
+      <div class="col-md-1">
+      <span class="glyphicon glyphicon-edit"></span>
+    
+      </div>
+      <div class="col-md-7">
+        <input type="text" class="form-control" ng-model="item.name" > 
+      </div>
+      <div class="col-md-2">
+        <select class="form-control " ng-options="value for value in values" name="priority" ng-model="item.priority"></select>
+      </div>
+      <div class="col-md-2">
+        <a href="" ng-click="okChange(item)" class="btn btn-sm btn-primary" ng-click="" ><span class="glyphicon glyphicon-ok"></span></a>
+        <a href="" ng-click="cancelChange(item)" class="btn btn-sm btn-danger" ng-click="" ><span class="glyphicon glyphicon-remove"></span></a>
+      </div>
+    </div>
+
+  </div>
+
+</div>
